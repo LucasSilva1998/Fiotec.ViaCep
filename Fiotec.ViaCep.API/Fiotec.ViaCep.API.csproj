@@ -18,8 +18,4 @@
     <ProjectReference Include="..\Fiotec.ViaCep.Infra.Services\Fiotec.ViaCep.Infra.Services.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>

@@ -1,4 +1,5 @@
 using Fiotec.ViaCep.API.Extensions;
+using Fiotec.ViaCep.API.Middlewares;
 using Fiotec.ViaCep.Application.Extensions;
 using Fiotec.ViaCep.Infra.Services.Interfaces;
 using Fiotec.ViaCep.Infra.Services.Services;
@@ -7,11 +8,9 @@ using Polly.Extensions.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 builder.Services.AddControllers();
 
 // Application Services 
-
 builder.Services.AddApplicationServices();
 
 // Configurações ViaCEP a partir do appsettings.json
@@ -30,12 +29,13 @@ builder.Services.AddHttpClient<IViaCepService, ViaCepService>(client =>
         retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))
     ));
 
-builder.Services.AddOpenApi();
-
 // Documentação do Swagger
 builder.Services.AddSwaggerDocumentation();
 
 var app = builder.Build();
+
+// Middlewares
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 // Swagger no ambiente de desenvolvimento
 if (app.Environment.IsDevelopment())

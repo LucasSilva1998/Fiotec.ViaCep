@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Fiotec.ViaCep.Infra.Services\Fiotec.ViaCep.Infra.Services.csproj" />
+  </ItemGroup>
+
 </Project>

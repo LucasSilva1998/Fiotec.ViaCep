@@ -1,4 +1,5 @@
 using Fiotec.ViaCep.API.Extensions;
+using Fiotec.ViaCep.Application.Extensions;
 using Fiotec.ViaCep.Infra.Services.Interfaces;
 using Fiotec.ViaCep.Infra.Services.Services;
 using Polly;
@@ -6,9 +7,12 @@ using Polly.Extensions.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
 builder.Services.AddControllers();
+
+// Application Services 
+
+builder.Services.AddApplicationServices();
 
 // Configurações ViaCEP a partir do appsettings.json
 var viaCepSettings = builder.Configuration.GetSection("ViaCepSettings");

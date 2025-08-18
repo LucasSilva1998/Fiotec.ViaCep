@@ -1,0 +1,6 @@
+@Fiotec.ViaCep.API_HostAddress = http://localhost:5146
+
+GET {{Fiotec.ViaCep.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

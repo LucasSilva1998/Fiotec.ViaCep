@@ -1,11 +1,31 @@
 using Fiotec.ViaCep.API.Extensions;
+using Fiotec.ViaCep.Infra.Services.Interfaces;
+using Fiotec.ViaCep.Infra.Services.Services;
+using Polly;
+using Polly.Extensions.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
+// Configurações ViaCEP a partir do appsettings.json
+var viaCepSettings = builder.Configuration.GetSection("ViaCepSettings");
+
+// HttpClient para o serviço ViaCEP com Timeout e Retry 
+builder.Services.AddHttpClient<IViaCepService, ViaCepService>(client =>
+{
+    client.BaseAddress = new Uri(viaCepSettings["BaseUrl"]);
+    client.Timeout = TimeSpan.FromSeconds(int.Parse(viaCepSettings["TimeoutSeconds"]));
+})
+.AddPolicyHandler(HttpPolicyExtensions
+    .HandleTransientHttpError()
+    .WaitAndRetryAsync(
+        int.Parse(viaCepSettings["RetryCount"]),
+        retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))
+    ));
+
 builder.Services.AddOpenApi();
 
 // Documentação do Swagger

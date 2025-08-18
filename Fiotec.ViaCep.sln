@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiotec.ViaCep.Application",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiotec.ViaCep.Infra.Services", "Fiotec.ViaCep.Infra.Services\Fiotec.ViaCep.Infra.Services.csproj", "{33A876C1-D7B8-4908-8107-555CD6A6F738}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiotec.ViaCep.UnitTests", "Fiotec.ViaCep.UnitTests\Fiotec.ViaCep.UnitTests.csproj", "{A39CC3E5-30BA-46B8-AEB7-CAE6B181B732}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiotec.ViaCep.IntegrationTests", "Fiotec.ViaCep.IntegrationTests\Fiotec.ViaCep.IntegrationTests.csproj", "{9222A7FF-59E8-47D5-8AB2-33F9FE547D2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,14 @@ Global
 		{33A876C1-D7B8-4908-8107-555CD6A6F738}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33A876C1-D7B8-4908-8107-555CD6A6F738}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33A876C1-D7B8-4908-8107-555CD6A6F738}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A39CC3E5-30BA-46B8-AEB7-CAE6B181B732}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A39CC3E5-30BA-46B8-AEB7-CAE6B181B732}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A39CC3E5-30BA-46B8-AEB7-CAE6B181B732}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A39CC3E5-30BA-46B8-AEB7-CAE6B181B732}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9222A7FF-59E8-47D5-8AB2-33F9FE547D2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9222A7FF-59E8-47D5-8AB2-33F9FE547D2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9222A7FF-59E8-47D5-8AB2-33F9FE547D2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9222A7FF-59E8-47D5-8AB2-33F9FE547D2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +60,8 @@ Global
 		{8B5C5456-7A7C-4EA0-8099-D6264389B01E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{F646B6E5-79E6-4F25-B9D6-DBB874DBA1B9} = {4B58E1A4-292E-43E8-A2F6-995E5EA6B541}
 		{33A876C1-D7B8-4908-8107-555CD6A6F738} = {8B5C5456-7A7C-4EA0-8099-D6264389B01E}
+		{A39CC3E5-30BA-46B8-AEB7-CAE6B181B732} = {DD5A8B25-6307-4821-AF34-E09F8362D05A}
+		{9222A7FF-59E8-47D5-8AB2-33F9FE547D2B} = {DD5A8B25-6307-4821-AF34-E09F8362D05A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FF277B2B-8DFE-407F-BFC4-0CD449151A3E}

@@ -28,7 +28,7 @@ API RESTful desenvolvida em .NET 9 com arquitetura em camadas, responsável por 
 dotnet restore
 
 ### 2. Executar API
-cd fiotec-viaCep.API
+cd Fiotec.ViaCep.API
 dotnet run
 
 ---
@@ -78,7 +78,7 @@ GET http://localhost:5000/api/endereco/21040361
 
 # Testes
 
-Testes de integração criados na camada Infra.Tests
+Testes de integração criados na camada Tests
 
 Validam:
 
@@ -88,4 +88,4 @@ CEP inexistente → retorna null (mapeado para 404)
 
 ## Executar testes:
 
-dotnet test fiotec-viaCep.Infra.Tests
+dotnet test Fiotec.ViaCep.Tests
